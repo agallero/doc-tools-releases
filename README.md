@@ -25,3 +25,9 @@ Being a preprocessor to [docfx](https://dotnet.github.io/docfx/) you can use all
 Besides, that we provide some special constructs:
   * To insert an image, write `{{#image}}imagename.png{{//image}}` and save a `imagename.png` file at `\images`
   * If you want to provide a different image for dark mode users, save the dark image as `imagename_dark.png`. No changes in the markdown files are necessary, the dark image will be used automatically when the user is in dark mode.
+
+## Updating
+As xmldocer does some low-level patching of docfx output, we "fixed" the version of the templates. Also shiki is fixed. To update:
+  * docfx template export default <- move to doc-tools\xmldocer\xmldocer\templates
+  * docfx template export modern <- move to doc-tools\xmldocer\xmldocer\templates
+  * npm install -D shiki  <- in `doc-tools\xmldocer\xmldocer\util\highlight`
